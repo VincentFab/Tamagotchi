@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+/* Chaque media query annonce la fin d'une page ils seront toujours les derniers elements de la page */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+.background{
+    background-image: url('./img/trianglify-lowres\ \(1\).png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.tamagochi_page_container{
+  display: flex;
+  flex-direction: column;
+  .tamagochi_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .forest_img{
+    width: 308px;
+    height: 160px;
+    padding-top: 160px;
+  }
+  .bar_container{
+    height: 160px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    .health_bar{
+    width: 308px;
+    height: 25px;
+    background: #D9D9D9;
+    border-radius: 60px;
+    .health_bar_value{
+      background: #EB1C1C;
+    }
+    }
+    .food_bar{
+      width: 308px;
+      height: 25px;
+      background: #D9D9D9;
+      border-radius: 60px;
+    .food_bar_value{
+      background: #13EF0F;
+    }
+    }
+    .hapiness_bar{
+      width: 308px;
+      height: 25px;
+      background: #D9D9D9;
+      border-radius: 60px;
+    .hapiness_bar_value{
+      background: #CFEE10;
+    }
+    }
+  }
+  .icon_btn_container{
+    display: flex;
+    height: 160px;
+    padding-bottom: 160px;
+  
+    .img_sizing{
+      height: 56px;
+      width: 70px;
+    }
+    .btn_style{
+      height: 56px;
+      width: 56px;
+    }
+  }
+
+}
+
+
