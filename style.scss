@@ -20,11 +20,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 160px;
   }
   .forest_img{
     width: 308px;
     height: 160px;
-    padding-top: 160px;
+    background-image: url('./img/backgroundtoto.jpg');
+    background-size: 100%;
   }
   .bar_container{
     height: 160px;
@@ -64,9 +66,30 @@
   }
   .icon_btn_container{
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     height: 160px;
+    width: 100%;
     padding-bottom: 160px;
-  
+
+    .hearth_btn_container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .food_btn_container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .hapiness_btn_container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
     .img_sizing{
       height: 56px;
       width: 70px;
@@ -77,6 +100,10 @@
     }
   }
 
+}
+/* Le .no_display doit toujours être le dernier du code */
+.no_display{
+  display: none;
 }
 
 
