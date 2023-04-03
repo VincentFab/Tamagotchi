@@ -1,18 +1,4 @@
-class Tamagotchi {
-  name: string;
-  health: number;
-  hunger: number;
-  happiness: number;
-  is_alive: boolean;
-  tick_interval: number;
+import { tamagotchi } from "./tamagotchi_class" 
 
-  constructor(name: string) {
-    this.name = name;
-    this.health = 100;
-    this.hunger = 100;
-    this.happiness = 100;
-    this.is_alive = true;
-  }
-}
 
   
