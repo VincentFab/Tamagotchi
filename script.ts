@@ -1,4 +1,5 @@
-import { tamagotchi } from "./tamagotchi_class" 
 
 
+
+  console.log("hello");
   

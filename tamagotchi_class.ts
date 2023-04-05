@@ -1,69 +1,92 @@
-export class tamagotchi {
-    name: string;
-    health: number;
-    hunger: number;
-    happiness: number;
-    is_alive: boolean;
-    tick_interval: number;
-  
-    constructor(name: string) {
-        this.name = name;
-        this.health = 100;
-        this.hunger = 100;
-        this.happiness = 100;
-        this.is_alive = true;
-        this.tick_interval = setInterval(() => {
-          this.update_states_all();
-        }, 1000);
-      }
-    update_states_all() {
-        if (this.health <= 0, this.happiness <= 0, this.hunger <= 0) {
-            this.is_alive = false;
-            alert(`Oh no! ${this.name} has died.`);
-            clearInterval(this.tick_interval);
-            return;
-        }
-    }
-  }  
-  class DecrementingBar{
-    private element
-    private intervalId: number;
-    private value: number;
-    private maxValue: number;
-  
-    constructor ( elementId: string, maxValue: number) {
-      this.element = document.getElementById(elementId);
-      this.maxValue = maxValue;
-      this.value = maxValue;
-  
-      // on attribue le update width
-      this.updateWidth();
-      console.log('Created a new DecrementingBar');
-      // on lance l'interval pour faire baisser la width
-      this.intervalId = setInterval(() => {
-        this.value--;
-        this.updateWidth();
-  
-        // on arretes l'interval quand il atteint 0
-        if (this.value <= 0) {
-          clearInterval(this.intervalId);
-        }
-      }, 1000);
-    }
-  
-    private updateWidth(): void {
-      const percent = (this.value / this.maxValue) * 100;
-      this.element.style.width = percent + "%";
-    }
+class Tamagochi{
+  //variable recup du constructeur
+  name:string;
+  health_bar:HTMLElement;
+  hunger_bar: HTMLElement;
+  happiness_bar: HTMLElement;
+
+  //variable de la class
+  health:number = 100;
+  hunger:number = 100;
+  happiness:number = 100;
+
+
+  is_alive:boolean = false;
+
+  //variable calculé grace au element du constructeur
+  healthGap:number;
+  hungerGap:number;
+  happinessGap: number;
+
+  constructor(name:string, health_bar:HTMLElement, hunger_bar:HTMLElement,happiness_bar:HTMLElement){
+    this.name = name;
+    this.health_bar = health_bar;
+    this.hunger_bar = hunger_bar;
+    this.happiness_bar = happiness_bar;
+
+    this.healthGap = health_bar.offsetWidth / 100;
+    this.hungerGap = hunger_bar.offsetWidth / 100;
+    this.happinessGap = happiness_bar.offsetWidth / 100; 
+    
+    this.is_alive = true;
   }
-    const health_bar = document.getElementById("health_bar_value")!;
-    const food_bar = document.getElementById("food_bar_value")!;
-    const happiness_bar = document.getElementById("happiness_bar_value")!;
 
-    const health_decrementing_bar = new DecrementingBar(health_bar.id, 100);
-    const food_decrementing_bar = new DecrementingBar(food_bar.id, 100);
-    const happiness_decrementing_bar = new DecrementingBar(happiness_bar.id, 100);
+  DecreaseHealth(){
+    let result = this.health_bar.offsetWidth - this.healthGap;
+    if (this._checkIsLess(result)) this.is_alive = false;
+    this.health -= 1;
+    console.log("vie-");
+    
+  }
 
+  IncreaseHealth(){
+    let result = this.health_bar.offsetWidth + this.healthGap;
+    if (this._checkIsMore(result)) this.health += 0;
+    this.health += 1;
+    console.log("vie+");
+    
+  }
+
+
+  _checkIsLess(number:number){
+    if (number <= 0) return true;
+    return false;
+  }
+
+  _checkIsMore(number:number){
+    if (number > 100) return true;
+    return false;
+    
+  }
+
+}
+
+
+const Main = ()=>{
+  const health_bar = document.getElementById("health_bar_value")!;
+  const hunger_bar = document.getElementById("food_bar_value")!;
+  const happiness_bar = document.getElementById("happiness_bar_value")!;
   
+  let MyTamagochi = new Tamagochi("Totoro", health_bar, hunger_bar, happiness_bar);
+  
+}
+
+const StartGame = (myTamagochi:Tamagochi) =>{
+  
+  
+  //ajouté un bouton pour le heal
+
+  setInterval(() => {
+    
+    
+    myTamagochi.DecreaseHealth();
+    
+    
+    if (!myTamagochi.is_alive) return;
+  },1000)
+}
+
+//permet detre sur que tout le html a bien été chargé avant de faire quoi que ce soit 
+document.addEventListener('DOMContentLoaded', Main);
   
   
