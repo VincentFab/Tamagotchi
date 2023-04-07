@@ -10,9 +10,23 @@
 </head>
 <body>
    <div class="background">
-    <div class="tamagochi_page_container">
+    <div class="home no_display" id="home_page">
+        <div class=" totoro_container ">
+            <div class="forest_img">
+                <img src="./img/totoro.gif" alt="Trois Totoro devant une forêt dans le style Ghibli" class="img_sizing" id="totoro_trois">
+                <img src="./img/totobleu.gif" alt="Deux Totoro devant une forêt dans le style Ghibli" class="img_sizing" id="totoro_deux">
+            </div>
+        </div>
+        <div class="btn_container">
+            <div class="btn">
+                <button class="text"  id="start_btn">COMMENCER</button>
+            </div>
+        </div>
+    </div>
+    <!-- fin de page -->
+    <div class="tamagochi_page_container " id="totoro_trois_page">
         <div class="tamagochi_container">
-            <img src="./img/totoro.gif" alt="Totoro devant une forêt dans le style Ghibli" class="forest_img">
+            <img src="./img/totoro.gif" alt="Trois Totoro devant une forêt dans le style Ghibli" class="forest_img">
         </div>
         <div class="bar_container">
             <div class="health_bar">
@@ -28,20 +42,51 @@
         <div class="icon_btn_container">
             <div class="hearth_btn_container">
                 <img src="./img/[removal.ai]_4b8c3a99-ce02-433b-ac66-b9802279afce.png" alt="icone de coeur désignant la vie" class="img_sizing">
-                <img src="./img/[removal.ai]_tmp-6422cd042fc46.png" alt="bouton plus pour la vie" class="img_sizing btn_style">
+                <img src="./img/[removal.ai]_tmp-6422cd042fc46.png" alt="bouton plus pour la vie" class="img_sizing btn_style" id="btn_health">
             </div>
             <div class="food_btn_container">
                 <img src="./img/[removal.ai]_tmp-6421a0b77c556.png" alt="icone de nouilles désignant la nourriture" class="img_sizing">
-                <img src="./img/[removal.ai]_tmp-6422cd042fc46.png" alt="bouton plus pour la nourriture" class="img_sizing btn_style">
+                <img src="./img/[removal.ai]_tmp-6422cd042fc46.png" alt="bouton plus pour la nourriture" class="img_sizing btn_style" id="btn_hunger">
             </div>
             <div class="hapiness_btn_container">
                 <img src="./img/[removal.ai]_tmp-6421a0ed8a4dd.png" alt="icone de bain désignant la joie" class="img_sizing">
-                <img src="./img/[removal.ai]_tmp-6422cd042fc46.png" alt="bouton plus pour la joie" class="img_sizing btn_style">
+                <img src="./img/[removal.ai]_tmp-6422cd042fc46.png" alt="bouton plus pour la joie" class="img_sizing btn_style" id="btn_happiness">
             </div>
         </div>
     </div>
+    <!-- fin de page -->
+    <div class="tamagochi_page_container no_display" id="totoro_deux_page">
+        <div class="tamagochi_container">
+            <img src="./img/totobleu.gif" alt="Deux Totoro devant une forêt dans le style Ghibli" class="forest_img">
+        </div>
+        <div class="bar_container">
+            <div class="health_bar">
+                <div id="health_bar_value" ></div>
+            </div>
+            <div class="food_bar">
+                <div id="food_bar_value"></div>
+            </div>
+            <div class="hapiness_bar">
+                <div id="happiness_bar_value"></div>
+            </div>  
+        </div>
+        <div class="icon_btn_container">
+            <div class="hearth_btn_container">
+                <img src="./img/[removal.ai]_4b8c3a99-ce02-433b-ac66-b9802279afce.png" alt="icone de coeur désignant la vie" class="img_sizing">
+                <img src="./img/[removal.ai]_tmp-6422cd042fc46.png" alt="bouton plus pour la vie" class="img_sizing btn_style" id="btn_health">
+            </div>
+            <div class="food_btn_container">
+                <img src="./img/[removal.ai]_tmp-6421a0b77c556.png" alt="icone de nouilles désignant la nourriture" class="img_sizing">
+                <img src="./img/[removal.ai]_tmp-6422cd042fc46.png" alt="bouton plus pour la nourriture" class="img_sizing btn_style" id="btn_hunger">
+            </div>
+            <div class="hapiness_btn_container">
+                <img src="./img/[removal.ai]_tmp-6421a0ed8a4dd.png" alt="icone de bain désignant la joie" class="img_sizing">
+                <img src="./img/[removal.ai]_tmp-6422cd042fc46.png" alt="bouton plus pour la joie" class="img_sizing btn_style" id="btn_happiness">
+            </div>
+        </div>
+    </div>
+    <!-- fin de page -->
    </div>
-   <script src="tamagotchi_class.ts" type="module"></script>
-   <script src="script.ts" type="module"></script>
+   <script src="main.ts" type="module"></script>
 </body>
 </html>
